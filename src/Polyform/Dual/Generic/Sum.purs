@@ -14,7 +14,7 @@ import Prim.Row (class Cons) as Row
 import Record (get) as Record
 import Type.Prelude (class IsSymbol)
 
-class GDualSum p i rep (r ∷ # Type) | rep → r p i where
+class GDualSum p i rep (r ∷ Row Type) | rep → r p i where
   gDual
     ∷ Functor (p i)
     ⇒ Alt (p i)

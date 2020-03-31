@@ -14,7 +14,7 @@ import Prim.RowList (class RowToList, Cons, Nil, kind RowList)
 import Record (delete, get) as Record
 import Type.Prelude (class IsSymbol, RLProxy(..))
 
-class GDualVariant p i (dl ∷ RowList) (d ∷ # Type) (v ∷ # Type) | dl → d p i v where
+class GDualVariant p i (dl ∷ RowList Type) (d ∷ Row Type) (v ∷ Row Type) | dl → d p i v where
   gDualV
     ∷ Alt (p i)
     ⇒ Functor (p i)
@@ -72,5 +72,3 @@ variant
   → Dual p i (Variant v)
 variant pre duals =
   gDualV (RLProxy ∷ RLProxy dl) pre duals
-
-
